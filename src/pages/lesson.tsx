@@ -57,7 +57,7 @@ const formatTime = (timeMs: number): string => {
 };
 
 const Lesson: NextPage = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   const [lessonProblem, setLessonProblem] = useState(0);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
@@ -79,11 +79,12 @@ const Lesson: NextPage = () => {
   const totalCorrectAnswersNeeded = 2;
 
   const [isStartingLesson, setIsStartingLesson] = useState(true);
-  const hearts =
-    "fast-forward" in router.query &&
-    !isNaN(Number(router.query["fast-forward"]))
-      ? 3 - incorrectAnswerCount
-      : null;
+  // const hearts =
+  //   // "fast-forward" in router.query &&
+  //   !isNaN(Number(router.query["fast-forward"]))
+  //     ? 3 - incorrectAnswerCount
+  //     : null;
+  const hearts = null;
 
   const { correctAnswer } = problem;
   const isAnswerCorrect = Array.isArray(correctAnswer)
@@ -128,7 +129,8 @@ const Lesson: NextPage = () => {
     setCorrectAnswerShown(true);
   };
 
-  const unitNumber = Number(router.query["fast-forward"]);
+  // const unitNumber = Number(router.query["fast-forward"]);
+  const unitNumber = 0;
 
   if (hearts !== null && hearts < 0 && !correctAnswerShown) {
     return (

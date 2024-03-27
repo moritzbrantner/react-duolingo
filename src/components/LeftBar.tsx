@@ -3,8 +3,8 @@ import type { ComponentProps } from "react";
 import React, { useState } from "react";
 import type { Tab } from "./BottomBar";
 import { useBottomBarItems } from "./BottomBar";
-import type { LoginScreenState } from "./LoginScreen";
-import { LoginScreen } from "./LoginScreen";
+// import type { LoginScreenState } from "./LoginScreen";
+// import { LoginScreen } from "./LoginScreen";
 import { GlobeIconSvg, PodcastIconSvg } from "./Svgs";
 import { useBoundStore } from "~/hooks/useBoundStore";
 
@@ -31,8 +31,8 @@ export const LeftBar = ({ selectedTab }: { selectedTab: Tab | null }) => {
   const logOut = useBoundStore((x) => x.logOut);
 
   const [moreMenuShown, setMoreMenuShown] = useState(false);
-  const [loginScreenState, setLoginScreenState] =
-    useState<LoginScreenState>("HIDDEN");
+  // const [loginScreenState, setLoginScreenState] =
+  //   useState<LoginScreenState>("HIDDEN");
 
   const bottomBarItems = useBottomBarItems();
 
@@ -109,7 +109,7 @@ export const LeftBar = ({ selectedTab }: { selectedTab: Tab | null }) => {
                 {!loggedIn && (
                   <button
                     className="px-5 py-2 text-left uppercase hover:bg-gray-100"
-                    onClick={() => setLoginScreenState("SIGNUP")}
+                    // onClick={() => setLoginScreenState("SIGNUP")}
                   >
                     Create a profile
                   </button>
@@ -129,7 +129,7 @@ export const LeftBar = ({ selectedTab }: { selectedTab: Tab | null }) => {
                 {!loggedIn && (
                   <button
                     className="px-5 py-2 text-left uppercase hover:bg-gray-100"
-                    onClick={() => setLoginScreenState("LOGIN")}
+                    // onClick={() => setLoginScreenState("LOGIN")}
                   >
                     Sign in
                   </button>
@@ -147,10 +147,6 @@ export const LeftBar = ({ selectedTab }: { selectedTab: Tab | null }) => {
           </div>
         </ul>
       </nav>
-      <LoginScreen
-        loginScreenState={loginScreenState}
-        setLoginScreenState={setLoginScreenState}
-      />
     </>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ChevronLeftSvg, ChevronRightSvg } from "./Svgs";
 import React, { useRef } from "react";
@@ -110,7 +112,7 @@ export const LanguageCarousel = () => {
               <Link
                 key={language.code}
                 className="flex items-center gap-2"
-                href={"/learn"}
+                href={`/learn/${language.code}`}
                 onClick={() => setLanguage(language)}
               >
                 <Flag language={language} width={40} />

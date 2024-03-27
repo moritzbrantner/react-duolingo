@@ -1,17 +1,20 @@
+import "~/styles/globals.css";
 import { type NextPage } from "next";
 import Link from "next/link";
 import { GlobeSvg } from "~/components/Svgs";
 import React from "react";
 import { LanguageHeader } from "~/components/LanguageHeader";
-import { useLoginScreen, LoginScreen } from "~/components/LoginScreen";
-import _bgSnow from "../../public/bg-snow.svg";
+// import { useLoginScreen, LoginScreen } from "~/components/LoginScreen";
+import _bgSnow from "../../../public/bg-snow.svg";
 import type { StaticImageData } from "next/image";
 import { LanguageCarousel } from "~/components/LanguageCarousel";
+
+
 
 const bgSnow = _bgSnow as StaticImageData;
 
 const Home: NextPage = () => {
-  const { loginScreenState, setLoginScreenState } = useLoginScreen();
+  // const { loginScreenState, setLoginScreenState } = useLoginScreen();
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-center bg-[#235390] text-white"
@@ -31,20 +34,20 @@ const Home: NextPage = () => {
             >
               Get started
             </Link>
-            <button
+            {/* <button
               className="w-full rounded-2xl border-2 border-b-4 border-[#042c60] bg-[#235390] px-8 py-3 font-bold uppercase transition hover:bg-[#204b82] md:min-w-[320px]"
               onClick={() => setLoginScreenState("LOGIN")}
             >
               I already have an account
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
       <LanguageCarousel />
-      <LoginScreen
+      {/* <LoginScreen
         loginScreenState={loginScreenState}
         setLoginScreenState={setLoginScreenState}
-      />
+      /> */}
     </main>
   );
 };

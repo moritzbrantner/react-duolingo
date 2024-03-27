@@ -15,8 +15,8 @@ import {
 import { Calendar } from "./Calendar";
 import { useBoundStore } from "~/hooks/useBoundStore";
 import { Flag } from "./Flag";
-import type { LoginScreenState } from "./LoginScreen";
-import { LoginScreen } from "./LoginScreen";
+// import type { LoginScreenState } from "./LoginScreen";
+// import { LoginScreen } from "./LoginScreen";
 import { useLeaderboardRank } from "~/hooks/useLeaderboard";
 
 export const RightBar = () => {
@@ -33,8 +33,8 @@ export const RightBar = () => {
 
   const [gemsShown, setGemsShown] = useState(false);
 
-  const [loginScreenState, setLoginScreenState] =
-    useState<LoginScreenState>("HIDDEN");
+  // const [loginScreenState, setLoginScreenState] =
+  //   useState<LoginScreenState>("HIDDEN");
 
   return (
     <>
@@ -154,14 +154,14 @@ export const RightBar = () => {
         ) : null}
         <DailyQuestsSection />
         <XpProgressSection />
-        {!loggedIn && (
-          <CreateAProfileSection setLoginScreenState={setLoginScreenState} />
-        )}
+        {/* {!loggedIn && (
+          // <CreateAProfileSection setLoginScreenState={setLoginScreenState} />
+        )} */}
       </aside>
-      <LoginScreen
+      {/* <LoginScreen
         loginScreenState={loginScreenState}
         setLoginScreenState={setLoginScreenState}
-      />
+      /> */}
     </>
   );
 };
